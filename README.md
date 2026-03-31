@@ -4,6 +4,9 @@ docker run -it --security-opt label=disable -e XDG_RUNTIME_DIR=/tmp   -e XAUTHOR
 
 gz sim -v4 -r iris_runway.sdf
 
+ros2 launch mavros apm.launch fcu_url:="udp://127.0.0.1:14550@"
+
+
 cd ardupilot
 
 docker build . -t ardupilot --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
