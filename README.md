@@ -1,3 +1,5 @@
+make build
+
 docker build . -t ardupilot --build-arg USER_UID=$(id -u) --build-arg USER_GID=$(id -g)
 
 docker run -it --security-opt label=disable -e XDG_RUNTIME_DIR=/tmp   -e XAUTHORITY=$XAUTHORITY   -v /tmp/.X11-unix:/tmp/.X11-unix --privileged --net host -e DISPLAY  --gpus '"all","capabilities=compute,utility,graphics"' --device=/dev/dri single-drone-sim:latest tmux
@@ -5,8 +7,6 @@ docker run -it --security-opt label=disable -e XDG_RUNTIME_DIR=/tmp   -e XAUTHOR
 gz sim -v4 -r iris_runway.sdf
 
 cd ardupilot
-
-make build
 
 docker run --rm -it -v "$(pwd):/ardupilot" -u "$(id -u):$(id -g)" ardupilot:latest bash
 
