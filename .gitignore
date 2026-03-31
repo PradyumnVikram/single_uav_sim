@@ -1,0 +1,32 @@
+# ROS 2 / colcon workspace
+/workspace/build/
+/workspace/install/
+/workspace/log/
+
+# Local simulator build outputs
+/ardupilot/build/
+/ardupilot_gazebo/build/
+
+# Python caches and packaging artifacts
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.eggs/
+
+# Local virtual environments
+/.venv/
+/venv/
+/env/
+
+# Tooling metadata
+compile_commands.json
+
+# Editor and OS noise
+/.idea/
+/.vscode/
+.DS_Store
+*.swp
+*~
